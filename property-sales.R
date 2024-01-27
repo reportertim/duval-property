@@ -53,7 +53,7 @@ write.csv(list_industrial_sales,"2023_industrial_sales.csv", row.names = FALSE)
 #break out single family sales
 single_family_sales <- sales2023 %>% filter (code == "0100")
 
-
+#figure out zip code breakdown
 home_sales_zips <- single_family_sales %>% 
   group_by(zip_code) %>% 
   summarise(

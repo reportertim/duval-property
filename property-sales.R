@@ -45,7 +45,7 @@ list_industrial_sales <- sum_industrial_sales %>%
   relocate(address, .after="owner") %>%
   subset(select = -c(street_number, street, street_type, street_direction)
          )
-write.csv(list_industrial_sales,"2023_industrial_sales.csv", row.names = FALSE)
+write_excel_csv(list_industrial_sales,"2023_industrial_sales.csv")
 
 
 # Single Family -----------------------------------------------------------
@@ -62,4 +62,4 @@ home_sales_zips <- single_family_sales %>%
   arrange(desc(average_price)
   )
 
-write.csv(home_sales_zips,"2023_homes_zip.csv", row.names = FALSE)
+write_excel_csv(home_sales_zips,"2023_homes_zip.csv")
